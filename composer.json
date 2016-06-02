@@ -1,0 +1,20 @@
+{
+    "name": "bubblegenerator/generator",
+    "description": "BubbleGenerator Laravel 5",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dadan Hamdani",
+            "email": "dhamdani666@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "BubbleGenerator\\Generator\\":"src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support":"~5"
+    }
+}
