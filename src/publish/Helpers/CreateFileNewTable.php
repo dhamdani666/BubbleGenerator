@@ -15,7 +15,7 @@ class CreateFileNewTable
     public static function CreateMigration($namatable='',$namamigration='',$checkboxmigration='',$checkboxsoftdelete='',$checkboxtimestamp='',$validasinamafield='',$validasidbtype='',$validasilength='',$validasifield='',$ai='')
 {
 
-$MigrationName = "system/database/migrations/".str_replace(" ","_",str_replace("-","_",str_replace(":", "", Carbon::now())))."_".ucfirst($namamigration).".php";
+$MigrationName = "../database/migrations/".str_replace(" ","_",str_replace("-","_",str_replace(":", "", Carbon::now())))."_".ucfirst($namamigration).".php";
 
 if (!file_exists($MigrationName)) {
 
@@ -119,7 +119,7 @@ if (Schema::hasTable($namatable))
 
  $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
-    $ModelName =  "system/app/".ucfirst($namamodel).".php";
+    $ModelName =  "../app/".ucfirst($namamodel).".php";
 
         if (!file_exists($ModelName)) {
 
@@ -191,20 +191,6 @@ if(file_put_contents($ModelName,$newFileContent)!=false){
 
   }
 
-  if (!is_dir('system/resources/views/informasi/')) {
-  mkdir('system/resources/views/informasi');
-}else{
-if (!file_exists('system/resources/views/informasi/validasi.blade.php')) {
-  $newFileContent ='@if ($errors->has())
-      <div class="alert alert-danger">
-      @foreach ($errors->all() as $error)
-      <span class="glyphicon glyphicon-remove"></span> {{ $error }}<br>        
-      @endforeach
-      </div>
-      @endif';
-file_put_contents('system/resources/views/informasi/validasi.blade.php',$newFileContent);
-}
-}
 
 
 }
@@ -217,7 +203,7 @@ if (Schema::hasTable($namatable))
 {
     $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
-    $ControllersName =  "system/app/http/Controllers/".ucfirst($namacontrollers).".php";
+    $ControllersName =  "../app/http/Controllers/".ucfirst($namacontrollers).".php";
     $Modelname = 'use App\\'.ucfirst($namamodel);
     $Requestname = 'use App\Http\Requests\\'.ucfirst($namarequest);
 
@@ -377,7 +363,7 @@ if (Schema::hasTable($namatable))
 {
     $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
-    $ControllersName =  "system/app/http/Controllers/".ucfirst($namacontrollers).".php";
+    $ControllersName =  "../app/http/Controllers/".ucfirst($namacontrollers).".php";
     $Modelname = 'use App\\'.ucfirst($namamodel);
     $Requestname = 'use App\Http\Requests\\'.ucfirst($namarequest);
 
@@ -535,11 +521,11 @@ echo 'Maaf Table Yang Anda Masukan Tidak Tersedia';
   $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
 
-if (!is_dir('system/resources/views/'.$namaview.'/')) {
+if (!is_dir('../resources/views/'.$namaview.'/')) {
   // dir doesn't exist, make it
-  mkdir('system/resources/views/'.$namaview.'');
+  mkdir('../resources/views/'.$namaview.'');
 
-$Viewindex =  "system/resources/views/$namaview/".$namaview.".blade.php";
+$Viewindex =  "../resources/views/$namaview/".$namaview.".blade.php";
 
     if (!file_exists($Viewindex)) {
 
@@ -639,7 +625,7 @@ echo "View telah di buat : (".basename($Viewindex).") <br>";
             echo 'Maaf File View Di '.$Viewindex.' telah ada <br>';
       }
 
-$Viewcreate =  "system/resources/views/$namaview/getCreate.blade.php";
+$Viewcreate =  "../resources/views/$namaview/getCreate.blade.php";
 
  if (!file_exists($Viewcreate)) {
      
@@ -650,7 +636,7 @@ $newViewcreate ='
   <br><br>
 <h4>Tambah Data '.$namaview.'</h4>
 <hr>
-@include("informasi.validasi")
+@include("bubbleinformasi.validasi")
 <form role="form" method="post" action="{{URL("'.$namaview.'")}}" enctype="multipart/form-data">
 @include("'.$namaview.'.getFormCreate")
   <button type="submit" class="btn btn-default">Tambah Data</button>
@@ -667,7 +653,7 @@ echo "View telah di buat : (".basename($Viewcreate).") <br>";
 
 
 
-$Viewdetail =  "system/resources/views/$namaview/getDetail.blade.php";
+$Viewdetail =  "../resources/views/$namaview/getDetail.blade.php";
  if (!file_exists($Viewdetail)) {
 
 
@@ -691,7 +677,7 @@ echo "View telah di buat : (".basename($Viewdetail).") <br>";
 
 
 
-$Viewupdate =  "system/resources/views/$namaview/getUpdate.blade.php";
+$Viewupdate =  "../resources/views/$namaview/getUpdate.blade.php";
  if (!file_exists($Viewupdate)) {
 
 
@@ -702,7 +688,7 @@ $newViewupdate ='
   <br><br>
 <h4>Ubah Data '.$namaview.'</h4>
 <hr>
-@include("informasi.validasi")
+@include("bubbleinformasi.validasi")
 <form role="form" method="post" action="{{URL("'.$namaview.'/$'.$namatable.'->'.$tablesPrimary[0]->Column_name.'")}}" enctype="multipart/form-data">
 @include("'.$namaview.'.getFormUpdate")
   <button type="submit" class="btn btn-default">Ubah Data</button>
@@ -718,7 +704,7 @@ file_put_contents($Viewupdate,$newViewupdate);
       
 
 
-$FormDetail =  "system/resources/views/$namaview/getFormDetail.blade.php";
+$FormDetail =  "../resources/views/$namaview/getFormDetail.blade.php";
 
  if (!file_exists($FormDetail)) {
 
@@ -793,7 +779,7 @@ file_put_contents($FormDetail,$newFormDetail);
 
 
 
-$FormUpdate =  "system/resources/views/$namaview/getFormUpdate.blade.php";
+$FormUpdate =  "../resources/views/$namaview/getFormUpdate.blade.php";
 
  if (!file_exists($FormUpdate)) {
 
@@ -872,7 +858,7 @@ file_put_contents($FormUpdate,$newFormUpdate);
 
 
 
-$FormCreate =  "system/resources/views/$namaview/getFormCreate.blade.php";
+$FormCreate =  "../resources/views/$namaview/getFormCreate.blade.php";
 
  if (!file_exists($FormCreate)) {
 
@@ -950,7 +936,7 @@ echo "View telah di buat : (".basename($Viewupdate).") <br>";
 
 
 }else{
-    echo 'Maaf Folder View Di system/resources/views/'.$namaview.' telah ada <br>';
+    echo 'Maaf Folder View Di ../resources/views/'.$namaview.' telah ada <br>';
 }
 
 
@@ -963,11 +949,11 @@ echo "View telah di buat : (".basename($Viewupdate).") <br>";
   $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
 
-if (!is_dir('system/resources/views/'.$namaview.'/')) {
+if (!is_dir('../resources/views/'.$namaview.'/')) {
   // dir doesn't exist, make it
-  mkdir('system/resources/views/'.$namaview.'');
+  mkdir('../resources/views/'.$namaview.'');
 
-$Viewindex =  "system/resources/views/$namaview/".$namaview.".blade.php";
+$Viewindex =  "../resources/views/$namaview/".$namaview.".blade.php";
 
     if (!file_exists($Viewindex)) {
 
@@ -1067,7 +1053,7 @@ echo "View telah di buat : (".basename($Viewindex).") <br>";
             echo 'Maaf File View Di '.$Viewindex.' telah ada <br>';
       }
 
-$Viewcreate =  "system/resources/views/$namaview/getCreate.blade.php";
+$Viewcreate =  "../resources/views/$namaview/getCreate.blade.php";
 
  if (!file_exists($Viewcreate)) {
      
@@ -1078,7 +1064,7 @@ $newViewcreate ='
   <br><br>
 <h4>Tambah Data '.$namaview.'</h4>
 <hr>
-@include("informasi.validasi")
+@include("bubbleinformasi.validasi")
 <form role="form" method="post" action="{{URL("postCreate'.$namaview.'")}}" enctype="multipart/form-data">
 @include("'.$namaview.'.getFormCreate")
   <button type="submit" class="btn btn-default">Tambah Data</button>
@@ -1095,7 +1081,7 @@ echo "View telah di buat : (".basename($Viewcreate).") <br>";
 
 
 
-$Viewdetail =  "system/resources/views/$namaview/getDetail.blade.php";
+$Viewdetail =  "../resources/views/$namaview/getDetail.blade.php";
  if (!file_exists($Viewdetail)) {
 
 
@@ -1119,7 +1105,7 @@ echo "View telah di buat : (".basename($Viewdetail).") <br>";
 
 
 
-$Viewupdate =  "system/resources/views/$namaview/getUpdate.blade.php";
+$Viewupdate =  "../resources/views/$namaview/getUpdate.blade.php";
  if (!file_exists($Viewupdate)) {
 
 
@@ -1130,7 +1116,7 @@ $newViewupdate ='
   <br><br>
 <h4>Ubah Data '.$namaview.'</h4>
 <hr>
-@include("informasi.validasi")
+@include("bubbleinformasi.validasi")
 <form role="form" method="post" action="{{URL("postUpdate'.$namaview.'/$'.$namatable.'->'.$tablesPrimary[0]->Column_name.'")}}" enctype="multipart/form-data">
 @include("'.$namaview.'.getFormUpdate")
   <button type="submit" class="btn btn-default">Ubah Data</button>
@@ -1146,7 +1132,7 @@ file_put_contents($Viewupdate,$newViewupdate);
       
 
 
-$FormDetail =  "system/resources/views/$namaview/getFormDetail.blade.php";
+$FormDetail =  "../resources/views/$namaview/getFormDetail.blade.php";
 
  if (!file_exists($FormDetail)) {
 
@@ -1221,7 +1207,7 @@ file_put_contents($FormDetail,$newFormDetail);
 
 
 
-$FormUpdate =  "system/resources/views/$namaview/getFormUpdate.blade.php";
+$FormUpdate =  "../resources/views/$namaview/getFormUpdate.blade.php";
 
  if (!file_exists($FormUpdate)) {
 
@@ -1300,7 +1286,7 @@ file_put_contents($FormUpdate,$newFormUpdate);
 
 
 
-$FormCreate =  "system/resources/views/$namaview/getFormCreate.blade.php";
+$FormCreate =  "../resources/views/$namaview/getFormCreate.blade.php";
 
  if (!file_exists($FormCreate)) {
 
@@ -1377,7 +1363,7 @@ echo "View telah di buat : (".basename($Viewupdate).") <br>";
 
 
 }else{
-    echo 'Maaf Folder View Di system/resources/views/'.$namaview.' telah ada <br>';
+    echo 'Maaf Folder View Di ../resources/views/'.$namaview.' telah ada <br>';
 }
 
 
@@ -1393,7 +1379,7 @@ echo "View telah di buat : (".basename($Viewupdate).") <br>";
 
     $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
-    $RequestName =  "system/app/http/Requests/".ucfirst($namarequest).".php";
+    $RequestName =  "../app/http/Requests/".ucfirst($namarequest).".php";
     if (!file_exists($RequestName)) {
 
       $newFileContent = '<?php

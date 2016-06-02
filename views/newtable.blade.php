@@ -1,4 +1,4 @@
-@extends('bubblegenerator::layouts.template')
+@extends('bubblelayouts.template')
 @section('content')
 
 <div class="container">
@@ -8,7 +8,7 @@
 <h4>CRUD New Table</h4>
                         <hr>
                         <div id="imageloading" style="display: none;">
-  <center><img src="{{URL('img/loading.gif')}}" style="width:10%;"></center>
+  <center><img src="{{URL('bubbleassets/img/loading.gif')}}" style="width:10%;"></center>
 </div>
 <div id="response" style="display: none;"></div>
   <form id="formcrudtable" accept-charset="utf-8">

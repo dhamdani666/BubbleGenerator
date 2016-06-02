@@ -1,4 +1,4 @@
-@extends('bubblegenerator::layouts.template')
+@extends('bubblelayouts.template')
 @section('content')
 <div class="container">
   <button type="button" class="btn btn-danger btn-sm" id="Kembali">Kembali</button>
@@ -7,7 +7,7 @@
         <h4>CRUD By Table</h4>
                         <hr>
 <div id="imageloading" style="display: none;">
-  <center><img src="{{URL('img/loading.gif')}}" style="width:10%;"></center>
+  <center><img src="{{URL('bubbleassets/img/loading.gif')}}" style="width:10%;"></center>
 </div>
 <div id="response" style="display: none;"></div>
 

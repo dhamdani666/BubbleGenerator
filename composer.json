@@ -15,16 +15,6 @@
             "BubbleGenerator\\Generator\\":"src/"
         }
     },
-        "scripts": {
-        "post-install-cmd": [
-            "php artisan vendor:publish --tag=bubbleassets --force",
-            "php artisan vendor:publish --tag=bubblehelper --force"
-        ],
-        "post-update-cmd": [
-           "php artisan vendor:publish --tag=bubbleassets --force",
-           "php artisan vendor:publish --tag=bubblehelper --force"
-        ]
-    },
     "minimum-stability": "dev",
     "require": {
            "php": ">=5.5.9",

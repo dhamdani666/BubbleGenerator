@@ -61,7 +61,7 @@ $("#errorpointer *").prop("disabled", true);
                  $.ajax({
       type:"POST",
       data:{namatable: val, _token: token},
-      url:"ShowTable"
+      url:"bubbleShowTable"
       ,success:function(sukses)
         {
 
@@ -147,7 +147,7 @@ function prosesCRUD(){
 $.ajax({
       type:"POST",
       data:form,
-      url:"CreateController_Table"
+      url:"bubbleCreateController_Table"
       ,beforeSend: function() {
     $('#imageloading').show();// Note the ,e that I added
     $("#errorpointer *").prop("disabled", true);

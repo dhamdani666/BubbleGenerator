@@ -1,4 +1,4 @@
-@extends('bubblegenerator::layouts.template')
+@extends('bubblelayouts.template')
 @section('content')
 
 <div class="container">
