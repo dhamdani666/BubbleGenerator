@@ -530,7 +530,7 @@ $Viewindex =  "../resources/views/$namaview/".$namaview.".blade.php";
     if (!file_exists($Viewindex)) {
 
 $newViewindex ='
-@extends("bubblelayoutsuts.form", ["urldelete" => "deleteData'.$namaview.'","table"=>"table'.$namaview.'"])
+@extends("bubblelayouts.form", ["urldelete" => "deleteData'.$namaview.'","table"=>"table'.$namaview.'"])
 @section("content")
 @if(Session::has("message"))
     <div class="alert alert-success">
@@ -630,7 +630,7 @@ $Viewcreate =  "../resources/views/$namaview/getCreate.blade.php";
  if (!file_exists($Viewcreate)) {
      
 $newViewcreate ='
-@extends("bubblelayoutsuts.form")
+@extends("bubblelayouts.form")
 @section("content")
 <button type="button" class="btn btn-danger btn-sm" id="Kembali">Kembali</button>
   <br><br>
@@ -658,7 +658,7 @@ $Viewdetail =  "../resources/views/$namaview/getDetail.blade.php";
 
 
 $newViewdetail ='
-@extends("bubblelayoutsuts.form")
+@extends("bubblelayoutsut.form")
 @section("content")
 <button type="button" class="btn btn-danger btn-sm" id="Kembali">Kembali</button>
   <br><br>
@@ -682,7 +682,7 @@ $Viewupdate =  "../resources/views/$namaview/getUpdate.blade.php";
 
 
 $newViewupdate ='
-@extends("bubblelayoutsuts.form")
+@extends("bubblelayouts.form")
 @section("content")
 <button type="button" class="btn btn-danger btn-sm" id="Kembali">Kembali</button>
   <br><br>
@@ -958,7 +958,7 @@ $Viewindex =  "../resources/views/$namaview/".$namaview.".blade.php";
     if (!file_exists($Viewindex)) {
 
 $newViewindex ='
-@extends("bubblelayoutsuts.form", ["urldelete" => "deleteData'.$namaview.'","table"=>"table'.$namaview.'"])
+@extends("bubblelayouts.form", ["urldelete" => "deleteData'.$namaview.'","table"=>"table'.$namaview.'"])
 @section("content")
 @if(Session::has("message"))
     <div class="alert alert-success">
@@ -1058,7 +1058,7 @@ $Viewcreate =  "../resources/views/$namaview/getCreate.blade.php";
  if (!file_exists($Viewcreate)) {
      
 $newViewcreate ='
-@extends("bubblelayoutsuts.form")
+@extends("bubblelayouts.form")
 @section("content")
 <button type="button" class="btn btn-danger btn-sm" id="Kembali">Kembali</button>
   <br><br>
@@ -1086,7 +1086,7 @@ $Viewdetail =  "../resources/views/$namaview/getDetail.blade.php";
 
 
 $newViewdetail ='
-@extends("bubblelayoutsuts.form")
+@extends("bubblelayouts.form")
 @section("content")
 <button type="button" class="btn btn-danger btn-sm" id="Kembali">Kembali</button>
   <br><br>
@@ -1110,7 +1110,7 @@ $Viewupdate =  "../resources/views/$namaview/getUpdate.blade.php";
 
 
 $newViewupdate ='
-@extends("bubblelayoutsuts.form")
+@extends("bubblelayouts.form")
 @section("content")
 <button type="button" class="btn btn-danger btn-sm" id="Kembali">Kembali</button>
   <br><br>
