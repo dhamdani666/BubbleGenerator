@@ -27,5 +27,6 @@ class BubbleGeneratorServiceProvider extends ServiceProvider
 	{
 
 		require __DIR__ .'/Http/routes.php';
+		$this->loadViewsFrom(__DIR__ .'/../views','bubblegenerator');
 	}
 }
