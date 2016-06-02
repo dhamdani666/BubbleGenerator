@@ -30,10 +30,10 @@ class BubbleGeneratorServiceProvider extends ServiceProvider
 		$this->loadViewsFrom(__DIR__ .'/../views','bubblegenerator');
 
 		$this->publishes([
-		__DIR__ . '/../views/publish/assets' => base_path('bubbleassets'),
+		__DIR__ . '/../publish/assets' => base_path('bubbleassets'),
 		], 'bubbleassets');
 		$this->publishes([
-		__DIR__ . '/../views/publish/Helpers' => base_path('app/Helpers'),
+		__DIR__ . '/../publish/Helpers' => base_path('app/Helpers'),
 		], 'bubblehelper');
 
 	}
