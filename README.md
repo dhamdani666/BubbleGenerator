@@ -35,6 +35,8 @@ tepatnya di aliases
 9.	Apabila eror buka cmd anda lalu ketikan perintah php artisan route:cache , php artisan config:cache , php artisan view:clear
 10.	Selamat Mencoba semoga menjadi barokah untuk kita semua dan bermanfaat untuk saya dan terumata anda semua .
 
+
+Mohon Maaf Apabila Masih Banyak Kekurangan Dari System nya dikarenkan system ini masih Beta dan banyak yang harus di perbaiki<br>
 Terimakasih juga untuk :
 <li>Bootstrap</li>
 <li>SweetAlert</li>
