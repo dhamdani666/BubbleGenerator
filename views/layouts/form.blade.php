@@ -4,9 +4,9 @@
         <title>Laravel</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{{URL('assets/css/bootstrap.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{URL('assets/css/jquery.dataTables.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{URL('assets/css/sweetalert.css')}}">
+<link rel="stylesheet" type="text/css" href="{{URL('bubbleassets/css/bootstrap.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{URL('bubbleassets/css/jquery.dataTables.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{URL('bubbleassets/css/sweetalert.css')}}">
  
     </head>
     <body>
@@ -17,11 +17,11 @@
         @yield('content')
 
             </div>
-        <script src="{{URL('assets/js/jquery.min.js')}}" type="text/javascript"></script>
-         <script src="{{URL('assets/js/jquery.dataTables.min.js')}}" type="text/javascript" ></script>
-     <script src="{{URL('assets/js/bootstrap.min.js')}}" type="text/javascript" ></script>
-       <script src="{{URL('assets/js/dataTables.bootstrap.min.js')}}" type="text/javascript" ></script>
-              <script src="{{URL('assets/js/sweetalert.min.js')}}" type="text/javascript" ></script>
+        <script src="{{URL('bubbleassets/js/jquery.min.js')}}" type="text/javascript"></script>
+         <script src="{{URL('bubbleassets/js/jquery.dataTables.min.js')}}" type="text/javascript" ></script>
+     <script src="{{URL('bubbleassets/js/bootstrap.min.js')}}" type="text/javascript" ></script>
+       <script src="{{URL('bubbleassets/js/dataTables.bootstrap.min.js')}}" type="text/javascript" ></script>
+              <script src="{{URL('bubbleassets/js/sweetalert.min.js')}}" type="text/javascript" ></script>
        @stack('scripts')
 
        <script>

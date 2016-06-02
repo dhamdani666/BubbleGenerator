@@ -7,6 +7,8 @@ use App\Http\Requests;
 use DB;
 use Carbon\Carbon;
 use Datatables;
+use CreateFile;
+use CreateFileNewTable;
 use Config;
 use Illuminate\Support\Facades\Schema;
 
@@ -40,7 +42,7 @@ class BubbleGeneratorController extends Controller
 
         public function PostCreateController_Table(Request $request){
 
-$routesphp = file_get_contents('system/app/Http/routes.php');
+$routesphp = file_get_contents('../app/Http/routes.php');
 
         if($request->target=="table"){
 
@@ -72,7 +74,7 @@ echo "Maaf Code : Route::resource('".$namaview."', '".ucfirst($namacontroller)."
  }else{
 $routes ="
 Route::resource('".$namaview."', '".ucfirst($namacontroller)."');";
-    $addroutes = file_put_contents('system/app/http/routes.php',  "$routes" , FILE_APPEND);
+    $addroutes = file_put_contents('../app/http/routes.php',  "$routes" , FILE_APPEND);
  }
 
    if(strpos($routesphp, "Route::post('deleteData".$namaview."', '".ucfirst($namacontroller)."@deleteData')") !== false)
@@ -80,7 +82,7 @@ Route::resource('".$namaview."', '".ucfirst($namacontroller)."');";
 echo "Maaf Code : Route::post('deleteData".$namaview."', '".ucfirst($namacontroller)."@deleteData'); Telah Ada di Routes.php <br>";
  }else{
 $routes ="Route::post('deleteData".$namaview."', '".ucfirst($namacontroller)."@deleteData');";
-   $addroutes = file_put_contents('system/app/http/routes.php', "\r\n$routes" , FILE_APPEND);
+   $addroutes = file_put_contents('../app/http/routes.php', "\r\n$routes" , FILE_APPEND);
  }
 
   CreateFile::CreateViewResource($namatable,$namaview,$validasinamafield,$validasihtmltype);
@@ -95,7 +97,7 @@ Route::post('postUpdate".$namaview."/{id?}', '".ucfirst($namacontroller)."@postU
 Route::post('postCreate".$namaview."', '".ucfirst($namacontroller)."@postCreate');
 Route::post('deleteData".$namaview."', '".ucfirst($namacontroller)."@deleteData');
   ";
-   $addroutes = file_put_contents('system/app/http/routes.php', "\r\n$routes" , FILE_APPEND);
+   $addroutes = file_put_contents('../app/http/routes.php', "\r\n$routes" , FILE_APPEND);
     CreateFile::CreateView($namatable,$namaview,$validasinamafield,$validasihtmltype);
   }
 
@@ -140,7 +142,7 @@ echo "Maaf Code : Route::resource('".$namaview."', '".ucfirst($namacontroller)."
  }else{
 $routes ="
 Route::resource('".$namaview."', '".ucfirst($namacontroller)."');";
-    $addroutes = file_put_contents('system/app/http/routes.php',  "$routes" , FILE_APPEND);
+    $addroutes = file_put_contents('../app/http/routes.php',  "$routes" , FILE_APPEND);
  }
 
    if(strpos($routesphp, "Route::post('deleteData".$namaview."', '".ucfirst($namacontroller)."@deleteData')") !== false)
@@ -148,7 +150,7 @@ Route::resource('".$namaview."', '".ucfirst($namacontroller)."');";
 echo "Maaf Code : Route::post('deleteData".$namaview."', '".ucfirst($namacontroller)."@deleteData'); Telah Ada di Routes.php <br>";
  }else{
 $routes ="Route::post('deleteData".$namaview."', '".ucfirst($namacontroller)."@deleteData');";
-   $addroutes = file_put_contents('system/app/http/routes.php', "\r\n$routes" , FILE_APPEND);
+   $addroutes = file_put_contents('../app/http/routes.php', "\r\n$routes" , FILE_APPEND);
  }
   CreateFileNewTable::CreateViewResource($namatable,$namaview,$validasinamafield,$validasihtmltype);
 
@@ -164,7 +166,7 @@ Route::post('postUpdate".$namaview."/{id?}', '".ucfirst($namacontroller)."@postU
 Route::post('postCreate".$namaview."', '".ucfirst($namacontroller)."@postCreate');
 Route::post('deleteData".$namaview."', '".ucfirst($namacontroller)."@deleteData');
   ";
-     $addroutes = file_put_contents('system/app/http/routes.php', "\r\n$routes" , FILE_APPEND);
+     $addroutes = file_put_contents('../app/http/routes.php', "\r\n$routes" , FILE_APPEND);
        CreateFileNewTable::CreateView($namatable,$namaview,$validasinamafield,$validasihtmltype);
   }
 
