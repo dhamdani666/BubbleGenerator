@@ -1,11 +1,13 @@
 {
     "name": "bubblegenerator/generator",
     "description": "BubbleGenerator Laravel 5",
+    "version":"1.0",
     "license": "MIT",
     "authors": [
         {
             "name": "Dadan Hamdani",
-            "email": "dhamdani666@gmail.com"
+            "email": "dhamdani666@gmail.com",
+            "role":"creator"
         }
     ],
     "autoload":{
@@ -25,6 +27,9 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "illuminate/support":"~5"
+           "php": ">=5.5.9",
+        "laravel/framework": "5.2.*",
+         "laravelcollective/html": "5.2.*",
+         "yajra/laravel-datatables-oracle": "^6.11"
     }
 }
