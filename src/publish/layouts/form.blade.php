@@ -10,7 +10,7 @@
  
     </head>
     <body>
-    <center><div class="alert alert-success" role="alert"><h3>FORM LARAVEL</h3></div></center>
+    <center><div class="alert alert-success" role="alert"><h3>BubbleGenerator Laravel CRUD  by Dadan Hamdani &copy; 2016</h3></div></center>
     <div class="container">
     
 

@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{{URL('bubbleassets/css/bootstrap.min.css')}}">
     </head>
     <body>
-    <center><div class="alert alert-success" role="alert"><h3>Generator Laravel CRUD</h3></div></center>
+    <center><div class="alert alert-success" role="alert"><h3>BubbleGenerator Laravel CRUD  by Dadan Hamdani &copy; 2016</h3></div></center>
         @yield('content')
         
         <script src="{{URL('bubbleassets/js/jquery.min.js')}}" type="text/javascript" ></script>

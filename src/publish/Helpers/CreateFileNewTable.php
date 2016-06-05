@@ -521,9 +521,9 @@ echo 'Maaf Table Yang Anda Masukan Tidak Tersedia';
   $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
 
-if (!is_dir('".base_path()."/resources/views/'.$namaview.'/')) {
+if (!is_dir(''.base_path().'/resources/views/'.$namaview.'/')) {
   // dir doesn't exist, make it
-  mkdir('".base_path()."/resources/views/'.$namaview.'');
+  mkdir(''.base_path().'/resources/views/'.$namaview.'');
 
 $Viewindex =  "".base_path()."/resources/views/$namaview/".$namaview.".blade.php";
 
@@ -949,9 +949,9 @@ echo "View telah di buat : (".basename($Viewupdate).") <br>";
   $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
 
-if (!is_dir('".base_path()."/resources/views/'.$namaview.'/')) {
+if (!is_dir(''.base_path().'/resources/views/'.$namaview.'/')) {
   // dir doesn't exist, make it
-  mkdir('".base_path()."/resources/views/'.$namaview.'');
+  mkdir(''.base_path().'/resources/views/'.$namaview.'');
 
 $Viewindex =  "".base_path()."/resources/views/$namaview/".$namaview.".blade.php";
 
