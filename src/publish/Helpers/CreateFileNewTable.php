@@ -658,7 +658,7 @@ $Viewdetail =  "".base_path()."/resources/views/$namaview/getDetail.blade.php";
 
 
 $newViewdetail ='
-@extends("bubblelayoutsut.form")
+@extends("bubblelayouts.form")
 @section("content")
 <button type="button" class="btn btn-danger btn-sm" id="Kembali">Kembali</button>
   <br><br>
