@@ -13,6 +13,7 @@ BubbleGenerator ini sudah support menggunakan :
         "bubblegenerator/generator": "dev-master"
 2.	Setelah selesai install selanjutnya masukan class provider ini di app.php
 BubbleGenerator\Generator\BubbleGeneratorServiceProvider::class,
+Yajra\Datatables\DatatablesServiceProvider::class,
 3.	Selanjutnya ketikan perintah di cmd anda
 php artisan vendor:publish
 4.	Lihat di project terdapat folder baru yakni css , js dan juga helper<br>
