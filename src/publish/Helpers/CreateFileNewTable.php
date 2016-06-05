@@ -15,7 +15,7 @@ class CreateFileNewTable
     public static function CreateMigration($namatable='',$namamigration='',$checkboxmigration='',$checkboxsoftdelete='',$checkboxtimestamp='',$validasinamafield='',$validasidbtype='',$validasilength='',$validasifield='',$ai='')
 {
 
-$MigrationName = "../database/migrations/".str_replace(" ","_",str_replace("-","_",str_replace(":", "", Carbon::now())))."_".ucfirst($namamigration).".php";
+$MigrationName = "".base_path()."/database/migrations/".str_replace(" ","_",str_replace("-","_",str_replace(":", "", Carbon::now())))."_".ucfirst($namamigration).".php";
 
 if (!file_exists($MigrationName)) {
 
@@ -119,7 +119,7 @@ if (Schema::hasTable($namatable))
 
  $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
-    $ModelName =  "../app/".ucfirst($namamodel).".php";
+    $ModelName =  "".base_path()."/app/".ucfirst($namamodel).".php";
 
         if (!file_exists($ModelName)) {
 
@@ -203,7 +203,7 @@ if (Schema::hasTable($namatable))
 {
     $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
-    $ControllersName =  "../app/http/Controllers/".ucfirst($namacontrollers).".php";
+    $ControllersName =  "".base_path()."/app/http/Controllers/".ucfirst($namacontrollers).".php";
     $Modelname = 'use App\\'.ucfirst($namamodel);
     $Requestname = 'use App\Http\Requests\\'.ucfirst($namarequest);
 
@@ -363,7 +363,7 @@ if (Schema::hasTable($namatable))
 {
     $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
-    $ControllersName =  "../app/http/Controllers/".ucfirst($namacontrollers).".php";
+    $ControllersName =  "".base_path()."/app/http/Controllers/".ucfirst($namacontrollers).".php";
     $Modelname = 'use App\\'.ucfirst($namamodel);
     $Requestname = 'use App\Http\Requests\\'.ucfirst($namarequest);
 
@@ -521,11 +521,11 @@ echo 'Maaf Table Yang Anda Masukan Tidak Tersedia';
   $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
 
-if (!is_dir('../resources/views/'.$namaview.'/')) {
+if (!is_dir('".base_path()."/resources/views/'.$namaview.'/')) {
   // dir doesn't exist, make it
-  mkdir('../resources/views/'.$namaview.'');
+  mkdir('".base_path()."/resources/views/'.$namaview.'');
 
-$Viewindex =  "../resources/views/$namaview/".$namaview.".blade.php";
+$Viewindex =  "".base_path()."/resources/views/$namaview/".$namaview.".blade.php";
 
     if (!file_exists($Viewindex)) {
 
@@ -625,7 +625,7 @@ echo "View telah di buat : (".basename($Viewindex).") <br>";
             echo 'Maaf File View Di '.$Viewindex.' telah ada <br>';
       }
 
-$Viewcreate =  "../resources/views/$namaview/getCreate.blade.php";
+$Viewcreate =  "".base_path()."/resources/views/$namaview/getCreate.blade.php";
 
  if (!file_exists($Viewcreate)) {
      
@@ -653,7 +653,7 @@ echo "View telah di buat : (".basename($Viewcreate).") <br>";
 
 
 
-$Viewdetail =  "../resources/views/$namaview/getDetail.blade.php";
+$Viewdetail =  "".base_path()."/resources/views/$namaview/getDetail.blade.php";
  if (!file_exists($Viewdetail)) {
 
 
@@ -677,7 +677,7 @@ echo "View telah di buat : (".basename($Viewdetail).") <br>";
 
 
 
-$Viewupdate =  "../resources/views/$namaview/getUpdate.blade.php";
+$Viewupdate =  "".base_path()."/resources/views/$namaview/getUpdate.blade.php";
  if (!file_exists($Viewupdate)) {
 
 
@@ -704,7 +704,7 @@ file_put_contents($Viewupdate,$newViewupdate);
       
 
 
-$FormDetail =  "../resources/views/$namaview/getFormDetail.blade.php";
+$FormDetail =  "".base_path()."/resources/views/$namaview/getFormDetail.blade.php";
 
  if (!file_exists($FormDetail)) {
 
@@ -779,7 +779,7 @@ file_put_contents($FormDetail,$newFormDetail);
 
 
 
-$FormUpdate =  "../resources/views/$namaview/getFormUpdate.blade.php";
+$FormUpdate =  "".base_path()."/resources/views/$namaview/getFormUpdate.blade.php";
 
  if (!file_exists($FormUpdate)) {
 
@@ -858,7 +858,7 @@ file_put_contents($FormUpdate,$newFormUpdate);
 
 
 
-$FormCreate =  "../resources/views/$namaview/getFormCreate.blade.php";
+$FormCreate =  "".base_path()."/resources/views/$namaview/getFormCreate.blade.php";
 
  if (!file_exists($FormCreate)) {
 
@@ -936,7 +936,7 @@ echo "View telah di buat : (".basename($Viewupdate).") <br>";
 
 
 }else{
-    echo 'Maaf Folder View Di ../resources/views/'.$namaview.' telah ada <br>';
+    echo 'Maaf Folder View Di ".base_path()."/resources/views/'.$namaview.' telah ada <br>';
 }
 
 
@@ -949,11 +949,11 @@ echo "View telah di buat : (".basename($Viewupdate).") <br>";
   $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
 
-if (!is_dir('../resources/views/'.$namaview.'/')) {
+if (!is_dir('".base_path()."/resources/views/'.$namaview.'/')) {
   // dir doesn't exist, make it
-  mkdir('../resources/views/'.$namaview.'');
+  mkdir('".base_path()."/resources/views/'.$namaview.'');
 
-$Viewindex =  "../resources/views/$namaview/".$namaview.".blade.php";
+$Viewindex =  "".base_path()."/resources/views/$namaview/".$namaview.".blade.php";
 
     if (!file_exists($Viewindex)) {
 
@@ -1053,7 +1053,7 @@ echo "View telah di buat : (".basename($Viewindex).") <br>";
             echo 'Maaf File View Di '.$Viewindex.' telah ada <br>';
       }
 
-$Viewcreate =  "../resources/views/$namaview/getCreate.blade.php";
+$Viewcreate =  "".base_path()."/resources/views/$namaview/getCreate.blade.php";
 
  if (!file_exists($Viewcreate)) {
      
@@ -1081,7 +1081,7 @@ echo "View telah di buat : (".basename($Viewcreate).") <br>";
 
 
 
-$Viewdetail =  "../resources/views/$namaview/getDetail.blade.php";
+$Viewdetail =  "".base_path()."/resources/views/$namaview/getDetail.blade.php";
  if (!file_exists($Viewdetail)) {
 
 
@@ -1105,7 +1105,7 @@ echo "View telah di buat : (".basename($Viewdetail).") <br>";
 
 
 
-$Viewupdate =  "../resources/views/$namaview/getUpdate.blade.php";
+$Viewupdate =  "".base_path()."/resources/views/$namaview/getUpdate.blade.php";
  if (!file_exists($Viewupdate)) {
 
 
@@ -1132,7 +1132,7 @@ file_put_contents($Viewupdate,$newViewupdate);
       
 
 
-$FormDetail =  "../resources/views/$namaview/getFormDetail.blade.php";
+$FormDetail =  "".base_path()."/resources/views/$namaview/getFormDetail.blade.php";
 
  if (!file_exists($FormDetail)) {
 
@@ -1207,7 +1207,7 @@ file_put_contents($FormDetail,$newFormDetail);
 
 
 
-$FormUpdate =  "../resources/views/$namaview/getFormUpdate.blade.php";
+$FormUpdate =  "".base_path()."/resources/views/$namaview/getFormUpdate.blade.php";
 
  if (!file_exists($FormUpdate)) {
 
@@ -1286,7 +1286,7 @@ file_put_contents($FormUpdate,$newFormUpdate);
 
 
 
-$FormCreate =  "../resources/views/$namaview/getFormCreate.blade.php";
+$FormCreate =  "".base_path()."/resources/views/$namaview/getFormCreate.blade.php";
 
  if (!file_exists($FormCreate)) {
 
@@ -1363,7 +1363,7 @@ echo "View telah di buat : (".basename($Viewupdate).") <br>";
 
 
 }else{
-    echo 'Maaf Folder View Di ../resources/views/'.$namaview.' telah ada <br>';
+    echo 'Maaf Folder View Di ".base_path()."/resources/views/'.$namaview.' telah ada <br>';
 }
 
 
@@ -1379,7 +1379,7 @@ echo "View telah di buat : (".basename($Viewupdate).") <br>";
 
     $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
-    $RequestName =  "../app/http/Requests/".ucfirst($namarequest).".php";
+    $RequestName =  "".base_path()."/app/http/Requests/".ucfirst($namarequest).".php";
     if (!file_exists($RequestName)) {
 
       $newFileContent = '<?php
