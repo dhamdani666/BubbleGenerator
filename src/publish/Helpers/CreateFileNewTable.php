@@ -203,7 +203,7 @@ if (Schema::hasTable($namatable))
 {
     $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
-    $ControllersName =  "".base_path()."/app/http/Controllers/".ucfirst($namacontrollers).".php";
+    $ControllersName =  "".base_path()."/app/Http/Controllers/".ucfirst($namacontrollers).".php";
     $Modelname = 'use App\\'.ucfirst($namamodel);
     $Requestname = 'use App\Http\Requests\\'.ucfirst($namarequest);
 
@@ -363,7 +363,7 @@ if (Schema::hasTable($namatable))
 {
     $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
-    $ControllersName =  "".base_path()."/app/http/Controllers/".ucfirst($namacontrollers).".php";
+    $ControllersName =  "".base_path()."/app/Http/Controllers/".ucfirst($namacontrollers).".php";
     $Modelname = 'use App\\'.ucfirst($namamodel);
     $Requestname = 'use App\Http\Requests\\'.ucfirst($namarequest);
 
@@ -1379,7 +1379,7 @@ echo "View telah di buat : (".basename($Viewupdate).") <br>";
 
     $tables = DB::select('SHOW COLUMNS FROM '.$namatable.'');
     $tablesPrimary = DB::select('SHOW INDEX FROM '.$namatable.'');
-    $RequestName =  "".base_path()."/app/http/Requests/".ucfirst($namarequest).".php";
+    $RequestName =  "".base_path()."/app/Http/Requests/".ucfirst($namarequest).".php";
     if (!file_exists($RequestName)) {
 
       $newFileContent = '<?php
