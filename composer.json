@@ -1,6 +1,6 @@
 {
     "name": "bubblegenerator/generator",
-    "description": "BubbleGenerator Laravel 5",
+    "description": "Laravel 5 CRUD Generator with Bootstrap and Datatable - BubbleGenerator",
     "version":"1.0",
     "license": "MIT",
     "authors": [
